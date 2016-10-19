@@ -21,6 +21,11 @@ namespace INI
             return properties[key];
         }
 
+        public void setProperty(string key, string value)
+        {
+            properties[key] = value;
+        }
+
         /* Static Methods */
         public static Dictionary<string, string> GetProperties(string filepath)
         {
