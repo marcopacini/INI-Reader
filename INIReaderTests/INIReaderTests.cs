@@ -7,6 +7,18 @@ namespace INITests
     [TestClass]
     public class INIReaderTest
     {
+        /* Test Costructor */
+        [TestMethod]
+        public void INIReader_Test()
+        {
+            var filepath = "properties.ini";
+            var properties = new INIReader(filepath);
+
+            Assert.AreEqual(properties.getProperty("host"), "localhost");
+            Assert.AreEqual(properties.getProperty("user"), "admin");
+            Assert.AreEqual(properties.getProperty("password"), "qwerty");
+        }
+
         /* Test getProperty Method */
         [TestMethod]
         [ExpectedException(typeof(KeyNotFoundException))]

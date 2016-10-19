@@ -16,6 +16,11 @@ namespace INI
             this.properties = new Dictionary<string, string>();
         }
 
+        public INIReader(string filepath)
+        {
+            properties = INIReader.GetProperties(filepath);
+        }
+
         public string getProperty(string key)
         {
             return properties[key];
@@ -35,6 +40,6 @@ namespace INI
                 data.Add(row.Split('=')[0], string.Join("=", row.Split('=').Skip(1).ToArray()));
 
             return data;
-        }
+        }           
     }
 }
