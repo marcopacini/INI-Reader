@@ -1,4 +1,4 @@
-# INI-Reader
+# INI Reader
 C# Class similar to Java properties class for INI file.
 
 ### INI File Example
