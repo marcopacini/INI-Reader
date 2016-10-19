@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using INI;
 
@@ -7,6 +7,16 @@ namespace INITests
     [TestClass]
     public class INIReaderTest
     {
+        /* Test getProperty Method */
+        [TestMethod]
+        [ExpectedException(typeof(KeyNotFoundException))]
+        public void getProperty_NotFoundKey_Test()
+        { 
+            var properties = new INIReader();
+            var property = properties.getProperty("key");
+        }
+
+        /* Static Method GetProperty */
         [TestMethod]
         public void GetProperties_Test()
         {

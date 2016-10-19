@@ -9,6 +9,19 @@ namespace INI
 {
     public class INIReader
     {
+        private Dictionary<string, string> properties;
+
+        public INIReader()
+        {
+            this.properties = new Dictionary<string, string>();
+        }
+
+        public string getProperty(string key)
+        {
+            return properties[key];
+        }
+
+        /* Static Methods */
         public static Dictionary<string, string> GetProperties(string filepath)
         {
             var data = new Dictionary<string, string>();
